@@ -169,7 +169,7 @@ function isValidNewBlock(newBlock, previousBlock) {
 }
 
 function isValidChain(blockchainToValidate) {
-    if (JSON.stringify(blockchainToValidate[0] !== JSON.stringify(getGenesisBlock()))) {
+    if (JSON.stringify(blockchainToValidate[0]) !== JSON.stringify(getGenesisBlock())) {
         return false;
     }
     var tempBlocks = [blockchainToValidate[0]];

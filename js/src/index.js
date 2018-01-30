@@ -100,7 +100,7 @@ export function isValidNewBlock(
 }
 
 export function isValidChain(blockchainToValidate: BlockChain): boolean {
-    if (JSON.stringify(blockchainToValidate[0] !== JSON.stringify(getGenesisBlock()))) {
+    if (JSON.stringify(blockchainToValidate[0]) !== JSON.stringify(getGenesisBlock())) {
         return false
     }
     const tempBlocks = [blockchainToValidate[0]]
