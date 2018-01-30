@@ -1,0 +1,12 @@
+[ignore]
+.*/ndoe_modules/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
