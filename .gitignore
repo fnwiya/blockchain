@@ -1,1 +1,6 @@
+##js
 .*/ndoe_modules/.*
+##rust
+**/target/
+**/Cargo.lock
+**/*.rs.bk
