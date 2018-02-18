@@ -48,4 +48,16 @@ impl BlockChain {
 
         (self.blocks.len() - 1) as u64
     }
+
+    pub fn mine(&mut self) -> u64 {
+        let recipient = self.identifier.to_string();
+        self.new_transaction("0", &recipient, 2);
+
+        let current_proof = self.blocks.last().unwrap().proof;
+        let nonce = Nonce { current: current_proof };
+        let next_proof = nonce.find_next();
+        self.new_block(unixtime::nano::now(), next_proof);
+
+        self.blocks.len() as u64
+    }
 }
